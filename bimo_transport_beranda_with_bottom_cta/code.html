@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bimo Transport | Premium Bus Service Yogyakarta</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .gatotkaca-watermark {
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+            -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+            opacity: 0.05;
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .site-nav {
+            background: transparent;
+            border-color: transparent;
+            box-shadow: none;
+            transition: background-color 280ms ease, border-color 280ms ease, box-shadow 280ms ease, height 280ms ease;
+        }
+        .site-nav:not(.nav-scrolled) a,
+        .site-nav:not(.nav-scrolled) summary,
+        .site-nav:not(.nav-scrolled) .brand-name {
+            color: #ffffff;
+        }
+        .site-nav:not(.nav-scrolled) details > div a {
+            color: #191c1e;
+        }
+        .site-nav:not(.nav-scrolled) details > div a:hover {
+            color: #3755c3;
+        }
+        .site-nav.nav-scrolled {
+            background: rgba(247, 249, 251, 0.84);
+            border-color: rgba(197, 198, 207, 0.75);
+            box-shadow: 0 4px 20px rgba(0, 8, 30, 0.08);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .hero-video {
+            transform: translate(-50%, -50%) scale(1.12);
+        }
+        .wayang-ornament {
+            position: absolute;
+            width: clamp(24rem, 38vw, 42rem);
+            height: auto;
+            opacity: 0.08;
+            pointer-events: none;
+            user-select: none;
+            z-index: 0;
+        }
+        .heritage-wayang {
+            top: 18rem;
+            left: -11rem;
+            width: clamp(38rem, 52vw, 58rem);
+            opacity: 0.13;
+        }
+        .premium-shadow {
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        .premium-shadow-hover:hover {
+            box-shadow: 0px 10px 30px rgba(10, 31, 68, 0.08);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Marquee Animations */
+        @keyframes marquee-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        @keyframes marquee-right {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+        .animate-marquee-left {
+            animation: marquee-left 30s linear infinite;
+        }
+        .animate-marquee-right {
+            animation: marquee-right 30s linear infinite;
+        }
+        .animate-marquee-left:hover, .animate-marquee-right:hover {
+            animation-play-state: paused;
+        }
+        .partner-logo-card {
+            width: 11rem;
+            height: 5rem;
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem;
+            background: rgba(255, 255, 255, 0.76);
+            border: 1px solid rgba(197, 198, 207, 0.72);
+            border-radius: 0.9rem;
+            box-shadow: 0 4px 16px rgba(10, 31, 68, 0.05);
+        }
+        .partner-logo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .testimonial-avatar {
+            width: 3rem;
+            height: 3rem;
+            flex: 0 0 auto;
+            border-radius: 9999px;
+            background-image: url('../assets/testimonial-avatars.png');
+            background-size: 200% 200%;
+            background-repeat: no-repeat;
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8);
+        }
+        .testimonial-avatar--1 { background-position: 0% 0%; }
+        .testimonial-avatar--2 { background-position: 100% 0%; }
+        .testimonial-avatar--3 { background-position: 0% 100%; }
+        .testimonial-avatar--4 { background-position: 100% 100%; }
+
+        /* Hide Scrollbar */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .testimonial-section {
+            background:
+                radial-gradient(circle at 8% 15%, rgba(55, 85, 195, .12), transparent 25rem),
+                radial-gradient(circle at 90% 86%, rgba(204, 167, 48, .13), transparent 24rem),
+                #f7f9fb;
+        }
+        .testimonial-carousel {
+            scroll-behavior: smooth;
+            scroll-padding-inline: 1.25rem;
+            cursor: grab;
+        }
+        .testimonial-carousel:active { cursor: grabbing; }
+        .testimonial-card {
+            min-height: 25rem;
+            transition: transform 250ms ease, box-shadow 250ms ease;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-.5rem);
+            box-shadow: 0 18px 42px rgba(10, 31, 68, .13);
+        }
+        .carousel-control {
+            width: 3rem;
+            height: 3rem;
+            border: 1px solid rgba(197, 198, 207, .9);
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, .94);
+            color: #0a1f44;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(10, 31, 68, .08);
+            transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+        }
+        .carousel-control:hover { background: #3755c3; color: #fff; transform: scale(1.06); }
+        .carousel-dot { width: .55rem; height: .55rem; border-radius: 9999px; background: #c5c6cf; transition: width 180ms ease, background 180ms ease; }
+        .carousel-dot[aria-current="true"] { width: 1.75rem; background: #3755c3; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#eceef0",
+                        "on-secondary-fixed": "#001453",
+                        "primary-container": "#0a1f44",
+                        "on-primary-fixed-variant": "#34466d",
+                        "error": "#ba1a1a",
+                        "tertiary": "#735c00",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c5c6cf",
+                        "surface-container-high": "#e6e8ea",
+                        "secondary-fixed-dim": "#b8c4ff",
+                        "on-primary-fixed": "#041a3f",
+                        "primary": "#00081e",
+                        "surface-container-low": "#f2f4f6",
+                        "inverse-primary": "#b4c6f4",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#3755c3",
+                        "on-error": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "on-surface-variant": "#44464e",
+                        "inverse-surface": "#2d3133",
+                        "on-surface": "#191c1e",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "surface-bright": "#f7f9fb",
+                        "background": "#f7f9fb",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-tertiary-container": "#4f3e00",
+                        "secondary-fixed": "#dde1ff",
+                        "surface": "#f7f9fb",
+                        "on-tertiary-fixed": "#241a00",
+                        "surface-tint": "#4c5e86",
+                        "tertiary-container": "#cca730",
+                        "on-primary-container": "#7687b2",
+                        "on-background": "#191c1e",
+                        "secondary-container": "#708cfd",
+                        "on-secondary-container": "#00217a",
+                        "primary-fixed": "#d9e2ff",
+                        "tertiary-fixed": "#ffe088",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "error-container": "#ffdad6",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#173bab",
+                        "surface-variant": "#e0e3e5",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#75777f",
+                        "primary-fixed-dim": "#b4c6f4",
+                        "gold-accent": "#D4AF37"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "section-padding": "80px",
+                        "unit": "8px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "label-lg": ["Inter"],
+                        "headline-lg": ["Montserrat"],
+                        "headline-sm": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "display-lg": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+<link href="../assets/responsive.css" rel="stylesheet"/>
+<link href="../assets/motion.css" rel="stylesheet"/>
+<script defer src="../assets/motion.js"></script>
+</head>
+<body class="bg-background text-on-surface font-body-md">
+<!-- TopNavBar -->
+<nav class="site-nav docked fixed inset-x-0 top-0 z-50 border-b h-20 flex items-center">
+<div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-4">
+<!-- Replace with actual logo or keep font-based brand -->
+<a aria-label="Bimo Transport — Beranda" class="brand-name flex items-center" href="../index.html">
+<img alt="Bimo Transport" class="w-28 h-auto md:w-32" src="../assets/bimo-logo.png"/>
+</a>
+</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-label-lg text-label-lg" href="#sejarah-kami">Tentang Kami</a>
+<details class="relative group">
+<summary class="list-none cursor-pointer text-on-surface-variant hover:text-secondary transition-colors font-label-lg text-label-lg flex items-center gap-1">Jenis Bus <span class="material-symbols-outlined text-base transition-transform group-open:rotate-180">expand_more</span></summary>
+<div class="absolute top-8 left-0 w-52 rounded-xl bg-white p-2 shadow-xl border border-outline-variant"><a class="block rounded-lg px-4 py-3 text-sm hover:bg-surface-container-low hover:text-secondary" href="../armada_daftar_harga/code.html#medium-long">Medium Long</a><a class="block rounded-lg px-4 py-3 text-sm hover:bg-surface-container-low hover:text-secondary" href="../armada_daftar_harga/code.html#single-glass">Single Glass</a><a class="block rounded-lg px-4 py-3 text-sm hover:bg-surface-container-low hover:text-secondary" href="../armada_daftar_harga/code.html#double-glass">Double Glass</a><a class="block rounded-lg px-4 py-3 text-sm hover:bg-surface-container-low hover:text-secondary" href="../armada_daftar_harga/code.html#jetbus-5">Jetbus 5</a></div>
+</details>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-label-lg text-label-lg" href="../armada_daftar_harga/code.html">Price List</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-label-lg text-label-lg" href="../testimoni_mitra_kami/code.html">Our Partners</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-label-lg text-label-lg" href="../testimoni_mitra_kami/code.html">Testimoni</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-label-lg text-label-lg" href="../kontak_kami/code.html">Contact Us</a>
+</div>
+<a href="../kontak_kami/code.html" class="bg-secondary text-on-secondary px-6 py-2.5 rounded-lg font-label-lg text-label-lg hover:shadow-lg hover:bg-on-secondary-fixed-variant transition-all active:scale-95 border-b-2 border-gold-accent">
+            Pesan Sekarang
+        </a>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full h-[100svh] min-h-[680px] flex items-center justify-center overflow-hidden bg-primary-container">
+<div class="absolute inset-0 z-0 overflow-hidden bg-primary" aria-hidden="true">
+<iframe class="hero-video absolute top-1/2 left-1/2 h-[56.25vw] min-h-full w-[177.78vh] min-w-full pointer-events-none" src="https://www.youtube-nocookie.com/embed/EAD-aiXgzRw?autoplay=1&amp;mute=1&amp;controls=0&amp;disablekb=1&amp;fs=0&amp;iv_load_policy=3&amp;loop=1&amp;playlist=EAD-aiXgzRw&amp;playsinline=1&amp;rel=0&amp;modestbranding=1" title="Video Bimo Transport" allow="autoplay" tabindex="-1" aria-hidden="true"></iframe>
+<div class="absolute inset-0 bg-primary/55"></div>
+</div>
+<!-- Subtle Gatotkaca Texture -->
+<div class="absolute inset-0 z-10 flex items-center justify-center pointer-events-none">
+<div class="w-full h-full gatotkaca-watermark flex items-center justify-center">
+<span class="material-symbols-outlined text-[400px] text-white">guardian</span>
+</div>
+</div>
+<!-- Soft transition from the dark hero video into the light heritage section -->
+<div aria-hidden="true" class="absolute inset-x-0 bottom-0 z-[15] h-80 pointer-events-none" style="background: linear-gradient(to bottom, rgba(247,249,251,0) 0%, rgba(247,249,251,0.035) 24%, rgba(247,249,251,0.13) 46%, rgba(247,249,251,0.38) 67%, rgba(247,249,251,0.72) 84%, #f7f9fb 100%);"></div>
+<div class="relative z-20 max-w-container-max mx-auto px-gutter text-center">
+<h1 class="hero-title font-display-lg text-display-lg md:text-[64px] text-white mb-6 leading-tight drop-shadow-md">
+            Perjalanan <span class="text-gold-accent">Aman &amp; Nyaman</span><br/>Bersama Bimo Transport
+        </h1>
+<p class="hero-subtitle font-body-lg text-body-lg text-white/90 max-w-2xl mx-auto mb-10">
+            Penyedia layanan transportasi pariwisata premium berbasis di Yogyakarta dengan standar keselamatan bintang lima.
+        </p>
+<div class="hero-actions flex flex-col md:flex-row gap-4 justify-center">
+<a href="../armada_daftar_harga/code.html" class="bg-secondary text-on-secondary px-10 py-4 rounded-xl font-label-lg text-label-lg hover:bg-on-secondary-fixed-variant transition-all hover:scale-105 border-b-2 border-gold-accent">
+                Lihat Armada Kami
+            </a>
+<a href="../kontak_kami/code.html#contact-form" class="bg-white/10 backdrop-blur-md text-white border-2 border-white/30 px-10 py-4 rounded-xl font-label-lg text-label-lg hover:bg-white/20 transition-all">
+                Konsultasi Rute
+            </a>
+</div>
+</div>
+<!-- Floating Stats -->
+<div class="hero-stats absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:flex items-center gap-12 bg-surface-container-lowest/10 backdrop-blur-xl p-8 rounded-2xl border border-white/10 z-30">
+<div class="text-center">
+<div class="text-gold-accent font-bold text-headline-md">28+</div>
+<div class="text-white/80 font-label-lg text-label-lg">Tahun Pengalaman</div>
+</div>
+<div class="w-px h-10 bg-white/20"></div>
+<div class="text-center">
+<div class="text-gold-accent font-bold text-headline-md">50+</div>
+<div class="text-white/80 font-label-lg text-label-lg">Armada Bus</div>
+</div>
+<div class="w-px h-10 bg-white/20"></div>
+<div class="text-center">
+<div class="text-gold-accent font-bold text-headline-md">100%</div>
+<div class="text-white/80 font-label-lg text-label-lg">Safety Record</div>
+</div>
+</div>
+</header>
+<!-- Tentang Kami Section -->
+<section class="py-section-padding bg-surface overflow-hidden relative">
+<img alt="" aria-hidden="true" class="wayang-ornament heritage-wayang" src="../assets/wayang.png"/>
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="order-2 lg:order-1">
+<span class="text-secondary font-label-lg text-label-lg uppercase tracking-widest mb-4 block">Warisan Kami</span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Tumbuh Bersama, Melayani dengan Sepenuh Hati</h2>
+<div class="space-y-6 text-on-surface-variant font-body-md text-body-md leading-relaxed">
+<p>
+<strong class="text-primary">PT Bimo Transport Indonesia</strong> tumbuh dari Yogyakarta dengan satu komitmen: menghadirkan perjalanan yang aman, nyaman, dan dapat diandalkan bagi setiap pelanggan.
+                    </p>
+<p>
+                        Selama hampir tiga dekade, kami merawat budaya disiplin, profesionalisme, dan pelayanan hangat yang diwariskan oleh pendiri kami, <strong class="text-primary">Jenderal (Purn.) Subagyo HS</strong>. Nilai-nilai ini menuntun setiap kru dan armada Bimo, dari persiapan perjalanan hingga Anda tiba di tujuan.
+                    </p>
+</div>
+<div class="mt-8">
+<a class="bg-primary-container text-white px-8 py-3 rounded-lg font-label-lg text-label-lg inline-flex items-center gap-2 hover:bg-primary transition-colors group" href="#sejarah-kami">
+                        Kenali Perjalanan Kami
+<span class="material-symbols-outlined text-white group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+<div class="order-1 lg:order-2 relative">
+<div class="aspect-square rounded-3xl overflow-hidden premium-shadow relative z-10">
+<img alt="Tim Bimo Transport dalam kegiatan kebersamaan" class="w-full h-full object-cover" src="../assets/our-heritage-bimo.jpg"/>
+</div>
+<!-- Decorative Gold Element -->
+<div class="absolute -bottom-6 -right-6 w-32 h-32 bg-gold-accent rounded-2xl -z-0 opacity-20"></div>
+</div>
+</div>
+<!-- Bento Pillars Section -->
+<div class="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Sejarah Kami -->
+<div class="bg-surface-container-lowest p-10 rounded-3xl border border-outline-variant premium-shadow premium-shadow-hover transition-all group" id="sejarah-kami">
+<div class="w-16 h-16 bg-primary-container/10 rounded-2xl flex items-center justify-center mb-6 text-primary-container group-hover:bg-primary-container group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-4xl">history</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Sejarah Kami</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm mb-6 leading-relaxed">
+                    Berawal dari visi luhur di Yogyakarta, kini kami telah berkembang pesat dengan berbagai cabang strategis termasuk di Semarang untuk melayani Pulau Jawa.
+                </p>
+<a class="text-secondary font-label-lg text-label-lg flex items-center gap-2 group-hover:underline" href="#">
+                    Baca Selengkapnya
+                    <span class="material-symbols-outlined text-sm">open_in_new</span>
+</a>
+</div>
+<!-- Jetbus 5 -->
+<div class="bg-primary-container p-10 rounded-3xl premium-shadow premium-shadow-hover transition-all group text-white relative overflow-hidden">
+<!-- Subtle Gatotkaca graphic -->
+<span class="material-symbols-outlined absolute -bottom-10 -right-10 text-[180px] opacity-10">directions_bus</span>
+<div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-6 text-gold-accent group-hover:bg-gold-accent group-hover:text-primary transition-colors relative z-10">
+<span class="material-symbols-outlined text-4xl">commute</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-4 relative z-10">Jetbus 5 Armada</h3>
+<p class="text-white/80 font-body-sm text-body-sm mb-6 leading-relaxed relative z-10">
+                    Investasi terbaru kami di tahun 2024 dengan 3 unit Jetbus 5 seri terbaru dari Karoseri Adiputro. Menjamin kemewahan dan teknologi terkini.
+                </p>
+<a class="text-gold-accent font-label-lg text-label-lg flex items-center gap-2 relative z-10 group-hover:underline" href="#">
+                    Spesifikasi Unit
+                    <span class="material-symbols-outlined text-sm">bolt</span>
+</a>
+</div>
+<!-- Route -->
+<div class="bg-surface-container-lowest p-10 rounded-3xl border border-outline-variant premium-shadow premium-shadow-hover transition-all group">
+<div class="w-16 h-16 bg-primary-container/10 rounded-2xl flex items-center justify-center mb-6 text-primary-container group-hover:bg-primary-container group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-4xl">map</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-4">Rute Unggulan</h3>
+<p class="text-on-surface-variant font-body-sm text-body-sm mb-6 leading-relaxed">
+                    Melayani rute strategis Jawa, Bali, hingga Sulawesi. Dari Borobudur hingga Makassar, kami menghubungkan Anda dengan destinasi ikonik.
+                </p>
+<a class="text-secondary font-label-lg text-label-lg flex items-center gap-2 group-hover:underline" href="#">
+                    Cek Rute Kami
+                    <span class="material-symbols-outlined text-sm">explore</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Our Partners Section -->
+<section class="py-section-padding bg-surface-container-low overflow-hidden relative" id="partners">
+<div class="max-w-container-max mx-auto px-gutter mb-12 text-center relative z-10">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">Our Partners</h2>
+<div class="h-1 w-24 bg-gold-accent mx-auto rounded-full"></div>
+</div>
+<div class="hidden space-y-8 relative z-10">
+<!-- Row 1: Left to Right (Moving Right) -->
+<div class="relative flex overflow-x-hidden group">
+<div class="flex animate-marquee-right py-4">
+<div class="flex items-center gap-12 px-6">
+<img alt="Partner 1" class="h-14 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLSAYMe7OX5kx_WhG7Vhgjpt7ffEpUwBe-rsdbD8mIDuxinrEexBLA0T7ptGg6cE-uqyL41ZSn-mchOrazBbRwQzMiZK8KwQ73T3cOeQY6VCNeSSv6zxryoGJGucm_bs706n4x4Wyl5ZzFNYVzDuMMcKyExZmdWxWq4OhigWULsUKp1F4wSfnlVOsmp9jVvl22NdMsA00k676fry3gD2492qsezL1NC3BMc9-hAkQ7N0gDIOvCEu9g"/>
+<img alt="Partner 2" class="h-14 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUV4YISud1o6E8XbFZnGayfzWmfw3shWnKxewG1Ydzu_0qvxe1T0Z1tEFhmlJ2QB9T9uZ4fgGQqjepJMw2KpERIe_uZlpoE1CvG1QWQis1bSF6EMCZZfhRxQjK61GVZ8lT-mgnTooQsyftivvFoX2RMxvEr51ZA6mGzv9zIMUOtobGNiISf3zEfRIWA1udELA0PKeQrnA8_QJ3R7zWHkBzpwQVQu_2gO5Y-YTcU45xSG47a9jVL_k_"/>
+<img alt="Partner 3" class="h-14 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiQGzDCojFnYD_leShyZpgNSkZP-p7wCExhQ_59Z9XIkrgU31N92CuqAWeyz9BxW-rnxGEBiEKl3i6kHzSRMDItzvncqyyvf3te0NAKeJxp_3n3GZxFidla5b2m1gO_a_s95mb9eoDpPsn8-I0h8p8FWQxpRIs-NG90ntIq6vi1Ofn0uGz6rntEWI_lUDPBvLKHO91yQ-FTl4sTVn48shyNEVUT4sZn_08YRDOLbrfpx_myQXftcnn"/>
+<img alt="Partner 4" class="h-14 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwGjnQvfufyW6Q2VVHED3QPqmvisZZVZFuvDE2fFxta29Ag4Zy3UcfzOohG_Ndb0eSO5zZpXi8pw-vCp2LIbccywB5czi6lAGGzzayg8HYkDTT3TwKFRgtqFz7yys38RmvSeTmdYYpVuARiQNA6646raz2nRVS4vFGP2mMRZiFVnzhyP3VJug0nsMn4WvvmANeCOtLGcdverrMrU4VkMG_NGverWkxPKUgqCAKg-uQAP3Lobf6q4gZ"/>
+</div>
+<!-- Duplicated Set -->
+<div class="flex items-center gap-12 px-6">
+<img alt="Partner 1" class="h-14 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLSAYMe7OX5kx_WhG7Vhgjpt7ffEpUwBe-rsdbD8mIDuxinrEexBLA0T7ptGg6cE-uqyL41ZSn-mchOrazBbRwQzMiZK8KwQ73T3cOeQY6VCNeSSv6zxryoGJGucm_bs706n4x4Wyl5ZzFNYVzDuMMcKyExZmdWxWq4OhigWULsUKp1F4wSfnlVOsmp9jVvl22NdMsA00k676fry3gD2492qsezL1NC3BMc9-hAkQ7N0gDIOvCEu9g"/>
+<img alt="Partner 2" class="h-14 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUV4YISud1o6E8XbFZnGayfzWmfw3shWnKxewG1Ydzu_0qvxe1T0Z1tEFhmlJ2QB9T9uZ4fgGQqjepJMw2KpERIe_uZlpoE1CvG1QWQis1bSF6EMCZZfhRxQjK61GVZ8lT-mgnTooQsyftivvFoX2RMxvEr51ZA6mGzv9zIMUOtobGNiISf3zEfRIWA1udELA0PKeQrnA8_QJ3R7zWHkBzpwQVQu_2gO5Y-YTcU45xSG47a9jVL_k_"/>
+<img alt="Partner 3" class="h-14 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiQGzDCojFnYD_leShyZpgNSkZP-p7wCExhQ_59Z9XIkrgU31N92CuqAWeyz9BxW-rnxGEBiEKl3i6kHzSRMDItzvncqyyvf3te0NAKeJxp_3n3GZxFidla5b2m1gO_a_s95mb9eoDpPsn8-I0h8p8FWQxpRIs-NG90ntIq6vi1Ofn0uGz6rntEWI_lUDPBvLKHO91yQ-FTl4sTVn48shyNEVUT4sZn_08YRDOLbrfpx_myQXftcnn"/>
+<img alt="Partner 4" class="h-14 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwGjnQvfufyW6Q2VVHED3QPqmvisZZVZFuvDE2fFxta29Ag4Zy3UcfzOohG_Ndb0eSO5zZpXi8pw-vCp2LIbccywB5czi6lAGGzzayg8HYkDTT3TwKFRgtqFz7yys38RmvSeTmdYYpVuARiQNA6646raz2nRVS4vFGP2mMRZiFVnzhyP3VJug0nsMn4WvvmANeCOtLGcdverrMrU4VkMG_NGverWkxPKUgqCAKg-uQAP3Lobf6q4gZ"/>
+</div>
+</div>
+</div>
+<!-- Row 2: Right to Left (Moving Left) -->
+<div class="relative flex overflow-x-hidden group">
+<div class="flex animate-marquee-left py-4">
+<div class="flex items-center gap-12 px-6">
+<img alt="Partner 5" class="h-14 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJz4m3cKybowGdWyxGsW_K-vlLnzFM21vPpuj9qzN5qtUEIGXE_M-Hb6gPIELL9oBu7ZrzEGMYJhR_N59t0Loo85rsqBOQlNTYFItkgM1e3oarQJZ_9eCrZV_q7VFFwmmEsl_PT2FvWfMYVIka-zlw904l1b5RpTGKgI3Ey1TV0wVCRBWALpiB2zUr1UNJyuaSxJlaYR4O9yCPhJAQhwKd24RHL-GibD3FMi0ax3PZt2LkJOqBEEQn"/>
+<img alt="Partner 6" class="h-14 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsbwrnpB45EBC-n-r4FQujH7DCqI8GI4z5aHP_Y7h6PmfyhCjMG7TfzaY9TIM3BSdtB-Y0l6Gb7uPshl-Wswwri6UbAwZCiTWc5agHJCthLvsoxykjnDaEq6f5zkEfG6xJ_68brEAMeNs_JKgQItjXzOUjaGcZbI5ZKr5Ui8Ly-gNqGf3UEPa0RG3qRZy18SH9qbvIwQzMn1Prk6hXk5EGiZsELpv7px71dgHLszgAM91DgCpfk_I9"/>
+<img alt="Partner 7" class="h-14 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3Ehm7jSbi1A3qxzOxYgqi33M9SnisjP2w8-V2nH1uG4mBPkKBgSyaTLDvMPO9Q6IsFPU11bLUArRaLrBupvdupypyQhrL7CEAjioQlaqU4EZ0kV39rkFO6O2udYnqz9K9-rsmHXaY8mbkY4Vg0p-tAmhSHC6MBtUZ8nsf9A78yAFF7B0_8-fMT4kaBteQB5AepqgNC86-LeVr7mijICkw4Ao94Tl4f-ETTkKjHvlQJ2rC7FCu4e-z"/>
+<img alt="Partner 8" class="h-14 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5nIK-l0esleTC6uSVH21HAU5Ji3G0LQUlTgLDV8yvhQ-4QtKbacTPm2rMK87_GRw_odMwYZHwADi5Q__n5SqMx3hEUdF6mmRv9kuYU28o9O6hHGnmJThoW7c90axJqAll2Fl8aEK039474JGtY_9qJCf_2rnMShv-X1IhDOnWYzcNIY2JxpSl65zK4r40RDnMSNsJcYUcYHM8qfDyoQPinFthfP-2x2mHdROP4yF0uCL2gJfs50Mz"/>
+</div>
+<!-- Duplicated Set -->
+<div class="flex items-center gap-12 px-6">
+<img alt="Partner 5" class="h-14 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJz4m3cKybowGdWyxGsW_K-vlLnzFM21vPpuj9qzN5qtUEIGXE_M-Hb6gPIELL9oBu7ZrzEGMYJhR_N59t0Loo85rsqBOQlNTYFItkgM1e3oarQJZ_9eCrZV_q7VFFwmmEsl_PT2FvWfMYVIka-zlw904l1b5RpTGKgI3Ey1TV0wVCRBWALpiB2zUr1UNJyuaSxJlaYR4O9yCPhJAQhwKd24RHL-GibD3FMi0ax3PZt2LkJOqBEEQn"/>
+<img alt="Partner 6" class="h-14 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsbwrnpB45EBC-n-r4FQujH7DCqI8GI4z5aHP_Y7h6PmfyhCjMG7TfzaY9TIM3BSdtB-Y0l6Gb7uPshl-Wswwri6UbAwZCiTWc5agHJCthLvsoxykjnDaEq6f5zkEfG6xJ_68brEAMeNs_JKgQItjXzOUjaGcZbI5ZKr5Ui8Ly-gNqGf3UEPa0RG3qRZy18SH9qbvIwQzMn1Prk6hXk5EGiZsELpv7px71dgHLszgAM91DgCpfk_I9"/>
+<img alt="Partner 7" class="h-14 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3Ehm7jSbi1A3qxzOxYgqi33M9SnisjP2w8-V2nH1uG4mBPkKBgSyaTLDvMPO9Q6IsFPU11bLUArRaLrBupvdupypyQhrL7CEAjioQlaqU4EZ0kV39rkFO6O2udYnqz9K9-rsmHXaY8mbkY4Vg0p-tAmhSHC6MBtUZ8nsf9A78yAFF7B0_8-fMT4kaBteQB5AepqgNC86-LeVr7mijICkw4Ao94Tl4f-ETTkKjHvlQJ2rC7FCu4e-z"/>
+<img alt="Partner 8" class="h-14 w-auto grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all cursor-pointer object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5nIK-l0esleTC6uSVH21HAU5Ji3G0LQUlTgLDV8yvhQ-4QtKbacTPm2rMK87_GRw_odMwYZHwADi5Q__n5SqMx3hEUdF6mmRv9kuYU28o9O6hHGnmJThoW7c90axJqAll2Fl8aEK039474JGtY_9qJCf_2rnMShv-X1IhDOnWYzcNIY2JxpSl65zK4r40RDnMSNsJcYUcYHM8qfDyoQPinFthfP-2x2mHdROP4yF0uCL2gJfs50Mz"/>
+</div>
+</div>
+</div>
+</div>
+<div class="space-y-6 relative z-10" aria-label="Daftar mitra Bimo Transport">
+<div class="relative flex overflow-hidden">
+<div class="flex animate-marquee-left py-2">
+<div class="flex items-center gap-6 px-3">
+<div class="partner-logo-card"><img alt="Universitas Gadjah Mada" src="../assets/partner-ugm.png"/></div><div class="partner-logo-card"><img alt="DAMRI" src="../assets/partner-damri.png"/></div><div class="partner-logo-card"><img alt="BSW Tour" src="../assets/partner-bsw-tour.png"/></div><div class="partner-logo-card"><img alt="Persada Indah Nusantara" src="../assets/partner-persada.png"/></div><div class="partner-logo-card"><img alt="Afrindo Tour and Travel" src="../assets/partner-afrindo.png"/></div><div class="partner-logo-card"><img alt="Madrasah Mualimat" src="../assets/partner-mualimat.png"/></div>
+</div>
+<div class="flex items-center gap-6 px-3" aria-hidden="true">
+<div class="partner-logo-card"><img alt="" src="../assets/partner-ugm.png"/></div><div class="partner-logo-card"><img alt="" src="../assets/partner-damri.png"/></div><div class="partner-logo-card"><img alt="" src="../assets/partner-bsw-tour.png"/></div><div class="partner-logo-card"><img alt="" src="../assets/partner-persada.png"/></div><div class="partner-logo-card"><img alt="" src="../assets/partner-afrindo.png"/></div><div class="partner-logo-card"><img alt="" src="../assets/partner-mualimat.png"/></div>
+</div>
+</div>
+</div>
+<div class="relative flex overflow-hidden">
+<div class="flex animate-marquee-right py-2">
+<div class="flex items-center gap-6 px-3">
+<div class="partner-logo-card"><img alt="Madrasah Mualimat" src="../assets/partner-mualimat.png"/></div><div class="partner-logo-card"><img alt="Afrindo Tour and Travel" src="../assets/partner-afrindo.png"/></div><div class="partner-logo-card"><img alt="Persada Indah Nusantara" src="../assets/partner-persada.png"/></div><div class="partner-logo-card"><img alt="BSW Tour" src="../assets/partner-bsw-tour.png"/></div><div class="partner-logo-card"><img alt="DAMRI" src="../assets/partner-damri.png"/></div><div class="partner-logo-card"><img alt="Universitas Gadjah Mada" src="../assets/partner-ugm.png"/></div>
+</div>
+<div class="flex items-center gap-6 px-3" aria-hidden="true">
+<div class="partner-logo-card"><img alt="" src="../assets/partner-mualimat.png"/></div><div class="partner-logo-card"><img alt="" src="../assets/partner-afrindo.png"/></div><div class="partner-logo-card"><img alt="" src="../assets/partner-persada.png"/></div><div class="partner-logo-card"><img alt="" src="../assets/partner-bsw-tour.png"/></div><div class="partner-logo-card"><img alt="" src="../assets/partner-damri.png"/></div><div class="partner-logo-card"><img alt="" src="../assets/partner-ugm.png"/></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonial Section -->
+<section class="testimonial-section py-section-padding relative overflow-hidden" id="testimonials">
+<div class="max-w-container-max mx-auto px-gutter relative z-10">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-xl">
+<span class="text-secondary font-label-lg text-label-lg uppercase tracking-widest mb-4 block">Pelanggan Kami</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Apa Kata Mereka?</h2>
+<p class="text-on-surface-variant font-body-md mt-4 leading-relaxed">Kepercayaan Anda adalah prioritas utama kami. Berikut adalah pengalaman tulus dari para pelanggan setia Bimo Transport.</p>
+</div>
+<div class="flex items-center gap-4 bg-white p-6 rounded-2xl premium-shadow border border-outline-variant">
+<div class="text-center">
+<div class="text-headline-md font-bold text-primary">4.9</div>
+<div class="flex text-gold-accent">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<div class="w-px h-10 bg-outline-variant"></div>
+<div>
+<div class="font-label-lg text-label-lg text-primary">Google Reviews</div>
+<div class="text-body-sm text-on-surface-variant">500+ Ulasan Puas</div>
+</div>
+</div>
+</div>
+<!-- Testimonial Carousel -->
+<div class="relative group">
+<div id="testimonial-carousel" class="testimonial-carousel flex overflow-x-auto gap-6 pb-8 no-scrollbar snap-x snap-mandatory" aria-label="Carousel testimoni pelanggan">
+<!-- Card 1 -->
+<article class="testimonial-card min-w-[320px] md:min-w-[400px] snap-center bg-white p-8 rounded-3xl border border-outline-variant premium-shadow premium-shadow-hover transition-all flex flex-col">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-4">
+<div aria-label="Foto profil Chanif Tri Prakoso" class="testimonial-avatar testimonial-avatar--1" role="img"></div>
+<div>
+<h4 class="font-headline-sm text-sm text-primary">Chanif Tri Prakoso</h4>
+<p class="text-xs text-on-surface-variant">4 jam lalu • <span class="text-secondary font-medium">Baru</span></p>
+</div>
+</div>
+<span class="material-symbols-outlined text-gold-accent" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+</div>
+<div class="flex text-gold-accent mb-4">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant font-body-md italic leading-relaxed flex-grow">
+                        "Mantapss. Bus nya bersih banget, wangi, dan drivernya sangat profesional. Perjalanan ke Jogja jadi gak berasa capek."
+                    </p>
+</article>
+<!-- Card 2 -->
+<article class="testimonial-card min-w-[320px] md:min-w-[400px] snap-center bg-primary-container p-8 rounded-3xl premium-shadow flex flex-col text-white z-10">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-4">
+<div aria-label="Foto profil Nandya Ramadhani" class="testimonial-avatar testimonial-avatar--2" role="img"></div>
+<div>
+<h4 class="font-headline-sm text-sm text-white">Nandya Ramadhani</h4>
+<p class="text-xs text-white/60">1 hari lalu • 8 ulasan</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-gold-accent" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div class="flex text-gold-accent mb-4">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-white/90 font-body-md italic leading-relaxed flex-grow">
+                        "Semua pelayanannya bintang 5, mulai dari pertama datang ke garasi untuk cari unit sampai proses follow up setelahnya. Staf dan crew ramah, responsif, dan benar-benar bikin nyaman."
+                    </p>
+</article>
+<!-- Card 3 -->
+<article class="testimonial-card min-w-[320px] md:min-w-[400px] snap-center bg-white p-8 rounded-3xl border border-outline-variant premium-shadow premium-shadow-hover transition-all flex flex-col">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-4">
+<div aria-label="Foto profil Berdikari Citra Lestari" class="testimonial-avatar testimonial-avatar--3" role="img"></div>
+<div>
+<h4 class="font-headline-sm text-sm text-primary">Berdikari Citra Lestari</h4>
+<p class="text-xs text-on-surface-variant">sebulan lalu • 2 ulasan</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-gold-accent" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+</div>
+<div class="flex text-gold-accent mb-4">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant font-body-md italic leading-relaxed flex-grow">
+                        "Dolan bareng bersama mas BIMO Alhamdulillah berjalan lancar, menyenangkan selama perjalanan, sukses selalu BIMO.."
+                    </p>
+</article>
+<!-- Card 4 -->
+<article class="testimonial-card min-w-[320px] md:min-w-[400px] snap-center bg-white p-8 rounded-3xl border border-outline-variant premium-shadow premium-shadow-hover transition-all flex flex-col">
+<div class="flex justify-between items-start mb-6">
+<div class="flex items-center gap-4">
+<div aria-label="Foto profil Eko Purnomo" class="testimonial-avatar testimonial-avatar--4" role="img"></div>
+<div>
+<h4 class="font-headline-sm text-sm text-primary">Eko Purnomo</h4>
+<p class="text-xs text-on-surface-variant">sebulan lalu • 7 ulasan</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-gold-accent" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+</div>
+<div class="flex text-gold-accent mb-4">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant font-body-md italic leading-relaxed flex-grow">
+                        "Pelayanan dari driver serta kernet memuaskan, semoga kedepan bisa menggunakan bus Bimo lagi. Terimakasih banyak 🙏"
+                    </p>
+</article>
+</div>
+<div class="mt-3 flex items-center justify-between gap-4">
+<div id="testimonial-dots" class="flex items-center gap-2" aria-label="Pilih testimoni"></div>
+<div class="flex items-center gap-3">
+<button id="testimonial-prev" class="carousel-control" type="button" aria-label="Testimoni sebelumnya"><span class="material-symbols-outlined">arrow_back</span></button>
+<button id="testimonial-next" class="carousel-control" type="button" aria-label="Testimoni berikutnya"><span class="material-symbols-outlined">arrow_forward</span></button>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<button class="bg-primary text-white px-10 py-4 rounded-xl font-label-lg text-label-lg hover:bg-primary-container transition-all flex items-center gap-3 mx-auto">
+                Lihat Semua Ulasan di Google
+                <span class="material-symbols-outlined text-lg">open_in_new</span>
+</button>
+</div>
+</div>
+</section><section class="cta-section py-section-padding relative overflow-hidden bg-primary-container">
+<div class="absolute inset-0 z-0 opacity-20">
+<img alt="Bimo Transport Background" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBO1d0RWk1TqnBy3QddJqEkYig3DGFaagXjio8skHJpVBc8pGKCGGxWaH5JITgCNqPxMC7L3NWwTuLVqDIrAcyLSmbDJ3_oC7r6yRRvN9jwREwP5GyWUXwrBL-kPDA3SEHLXKB-yCT2enOHNZf7YBF2GdKazOoVG6NJyN3mVgGHGoyY5npwZK7XeLGeV6nuoh6Z_n99rFhFhAHsAGpbOs7EEsZyqFFP3Lfq06FA4D_NXGET7F8035z"/>
+</div>
+<div class="max-w-container-max mx-auto px-gutter relative z-10 text-center">
+<h2 class="font-display-lg text-display-lg md:text-[48px] text-white mb-6 leading-tight">
+            Siap Merencanakan <span class="text-gold-accent">Perjalanan Anda?</span>
+</h2>
+<p class="font-body-lg text-body-lg text-white/80 max-w-2xl mx-auto mb-10">
+            Nikmati pengalaman perjalanan premium dengan armada terbaru dan driver profesional yang siap mengantar Anda ke destinasi impian dengan aman dan nyaman.
+        </p>
+<div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+<a class="bg-secondary text-white px-10 py-4 rounded-xl font-label-lg text-label-lg hover:bg-primary-container hover:scale-105 transition-all flex items-center gap-3 shadow-lg" href="https://wa.me/yournumber">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.144.39-.087.158.058 1.012.477 1.185.564.173.087.289.129.332.202.043.073.043.419-.101.824z"></path></svg>
+                Pesan Sekarang via WhatsApp
+            </a>
+<a class="bg-transparent text-white border-2 border-white/30 px-10 py-4 rounded-xl font-label-lg text-label-lg hover:bg-white/10 transition-all" href="#">
+                Lihat Daftar Harga
+            </a>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="relative overflow-hidden bg-primary-container text-on-primary-container border-t border-white/5">
+<img aria-hidden="true" alt="" class="absolute -bottom-12 left-1/2 w-[min(1100px,92vw)] -translate-x-1/2 select-none pointer-events-none" src="../assets/bimo-logo.png" style="filter: grayscale(1) brightness(0) invert(1); opacity: 0.07;"/>
+<div class="relative z-10 max-w-container-max mx-auto px-gutter py-section-padding">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="md:col-span-2">
+<div class="font-headline-sm text-headline-sm font-bold text-on-primary dark:text-primary-fixed mb-6">
+                    Bimo Transport
+                </div>
+<p class="text-on-primary-container/70 font-body-sm text-body-sm max-w-sm mb-6">
+                    Pelopor transportasi pariwisata premium dengan filosofi pelayanan luhur. Memberikan pengalaman perjalanan yang tak terlupakan di seluruh Indonesia.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold-accent hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold-accent hover:text-primary transition-all" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-white font-label-lg text-label-lg mb-6">Navigasi Cepat</h4>
+<ul class="space-y-4">
+<li><a class="text-on-primary-container/80 hover:text-white transition-all font-body-sm" href="#">Tentang Kami</a></li>
+<li><a class="text-on-primary-container/80 hover:text-white transition-all font-body-sm" href="#">Jenis Bus</a></li>
+<li><a class="text-on-primary-container/80 hover:text-white transition-all font-body-sm" href="#">Price List</a></li>
+<li><a class="text-on-primary-container/80 hover:text-white transition-all font-body-sm" href="#partners">Our Partners</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-label-lg text-label-lg mb-6">Kontak</h4>
+<ul class="space-y-4">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-gold-accent">location_on</span>
+<span class="text-on-primary-container/80 font-body-sm">Jl. Sampaan - Berbah, Sleman, Yogyakarta</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gold-accent">call</span>
+<span class="text-on-primary-container/80 font-body-sm">+62 274 XXX XXX</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gold-accent">mail</span>
+<span class="text-on-primary-container/80 font-body-sm">info@bimotransport.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="mt-20 pt-8 border-t border-white/10 flex flex-col md:row items-center justify-between gap-4">
+<p class="font-body-sm text-body-sm text-on-primary-container/60 text-center md:text-left">
+                Copyright © 2026 Bimo Transport | Jl. Sampaan - Berbah, Sleman, Yogyakarta
+            </p>
+<div class="flex gap-6">
+<a class="text-on-primary-container/60 hover:text-white transition-all text-[12px]" href="#">Kebijakan Privasi</a>
+<a class="text-on-primary-container/60 hover:text-white transition-all text-[12px]" href="#">Syarat &amp; Ketentuan</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- WhatsApp Floating Action -->
+<a class="fixed bottom-8 right-8 z-50 bg-secondary text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center hover:bg-primary-container hover:scale-110 active:scale-95 transition-all group" href="https://wa.me/yournumber">
+<svg class="w-8 h-8 fill-current" viewbox="0 0 24 24">
+<path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.144.39-.087.158.058 1.012.477 1.185.564.173.087.289.129.332.202.043.073.043.419-.101.824z"></path>
+</svg>
+<span class="absolute -top-2 -right-2 bg-red-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full animate-bounce">1</span>
+<div class="absolute right-20 bg-white text-primary px-4 py-2 rounded-lg premium-shadow font-label-lg text-label-lg opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+        Hubungi Kami Sekarang
+    </div>
+</a>
+<script>
+    // Micro-interactions and header behavior
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            nav.classList.add('nav-scrolled');
+            nav.classList.add('py-2');
+            nav.classList.remove('h-20');
+            nav.classList.add('h-16');
+        } else {
+            nav.classList.remove('nav-scrolled');
+            nav.classList.remove('py-2');
+            nav.classList.add('h-20');
+            nav.classList.remove('h-16');
+        }
+    });
+    window.dispatchEvent(new Event('scroll'));
+
+    // Carousel testimoni: otomatis berjalan, namun berhenti saat pengguna berinteraksi.
+    const testimonialCarousel = document.getElementById('testimonial-carousel');
+    const testimonialCards = [...testimonialCarousel.querySelectorAll('.testimonial-card')];
+    const dots = document.getElementById('testimonial-dots');
+    const previous = document.getElementById('testimonial-prev');
+    const next = document.getElementById('testimonial-next');
+    let currentSlide = 0;
+    let autoplay;
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+    const cardWidth = () => testimonialCards[0].getBoundingClientRect().width + 24;
+    const goTo = (index, smooth = true) => {
+        currentSlide = (index + testimonialCards.length) % testimonialCards.length;
+        testimonialCarousel.scrollTo({ left: currentSlide * cardWidth(), behavior: smooth ? 'smooth' : 'auto' });
+        [...dots.children].forEach((dot, dotIndex) => dot.setAttribute('aria-current', String(dotIndex === currentSlide)));
+    };
+
+    testimonialCards.forEach((_, index) => {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot';
+        dot.type = 'button';
+        dot.setAttribute('aria-label', `Tampilkan testimoni ${index + 1}`);
+        dot.addEventListener('click', () => goTo(index));
+        dots.appendChild(dot);
+    });
+    goTo(0, false);
+    const startAutoplay = () => {
+        clearInterval(autoplay);
+        autoplay = setInterval(() => goTo(currentSlide + 1), 4500);
+    };
+    previous.addEventListener('click', () => { goTo(currentSlide - 1); startAutoplay(); });
+    next.addEventListener('click', () => { goTo(currentSlide + 1); startAutoplay(); });
+    testimonialCarousel.addEventListener('mouseenter', () => clearInterval(autoplay));
+    testimonialCarousel.addEventListener('mouseleave', startAutoplay);
+    testimonialCarousel.addEventListener('focusin', () => clearInterval(autoplay));
+    testimonialCarousel.addEventListener('focusout', startAutoplay);
+    testimonialCarousel.addEventListener('mousedown', (event) => {
+        isDown = true;
+        startX = event.pageX - testimonialCarousel.offsetLeft;
+        scrollLeft = testimonialCarousel.scrollLeft;
+    });
+    ['mouseleave', 'mouseup'].forEach((eventName) => testimonialCarousel.addEventListener(eventName, () => { isDown = false; }));
+    testimonialCarousel.addEventListener('mousemove', (event) => {
+        if (!isDown) return;
+        event.preventDefault();
+        testimonialCarousel.scrollLeft = scrollLeft - (event.pageX - testimonialCarousel.offsetLeft - startX) * 1.5;
+    });
+    testimonialCarousel.addEventListener('scrollend', () => {
+        currentSlide = Math.round(testimonialCarousel.scrollLeft / cardWidth());
+        currentSlide = Math.min(currentSlide, testimonialCards.length - 1);
+        [...dots.children].forEach((dot, index) => dot.setAttribute('aria-current', String(index === currentSlide)));
+    });
+    window.addEventListener('resize', () => goTo(currentSlide, false));
+    startAutoplay();
+
+    document.addEventListener('click', (event) => {
+        const busLink = event.target.closest('a[href*="armada_daftar_harga/code.html#"]');
+        if (!busLink) return;
+        event.preventDefault();
+        window.location.assign(busLink.href);
+    });
+</script>
+</body></html>

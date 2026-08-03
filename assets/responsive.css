@@ -1,0 +1,33 @@
+/* Shared mobile and tablet layout refinements. */
+@media (max-width: 1023px) {
+  .py-section-padding { padding-top: 4rem !important; padding-bottom: 4rem !important; }
+  .space-y-20 > :not([hidden]) ~ :not([hidden]) { margin-top: 4rem !important; }
+  .grid.gap-16 { gap: 2.5rem !important; }
+  .grid.gap-12 { gap: 2rem !important; }
+  /* The heritage image stacks above copy at this breakpoint; place the wayang below it. */
+  .heritage-wayang { top: 48rem !important; left: -13rem !important; width: 42rem !important; opacity: .09 !important; }
+}
+
+@media (max-width: 767px) {
+  nav.h-20, .site-nav { height: 4.5rem !important; }
+  nav .h-20 { height: 4.5rem !important; }
+  nav .px-gutter { padding-left: 1rem !important; padding-right: 1rem !important; }
+  nav img.w-28, .site-nav img { width: 5.5rem !important; }
+  nav > div > a.bg-secondary { padding: .7rem .9rem !important; font-size: .75rem !important; line-height: 1rem !important; white-space: nowrap; }
+  .site-nav + header { min-height: 39rem !important; height: 88svh !important; }
+  .site-nav + header > .relative.z-20 { padding-top: 4.5rem !important; }
+  .font-display-lg, h1.font-display-lg { font-size: 2.5rem !important; line-height: 1.08 !important; }
+  .font-headline-lg, h2.font-headline-lg { font-size: 1.8rem !important; line-height: 1.2 !important; }
+  .font-body-lg { font-size: 1rem !important; line-height: 1.55 !important; }
+  .site-nav + header .gap-4 { gap: .75rem !important; }
+  .site-nav + header a[href*="armada"], .site-nav + header a[href*="kontak"] { width: 100%; justify-content: center; padding: .85rem 1rem !important; }
+  .site-nav + header .bottom-10 { bottom: 1rem !important; }
+  .site-nav + header .hidden.md\:flex { display: none !important; }
+  .flex.flex-col.md\:flex-row.justify-between.items-end { align-items: flex-start !important; }
+  .testimonial-carousel, #testimonial-carousel { margin-right: -1rem; padding-right: 1rem; }
+  .testimonial-card { min-height: 22rem !important; }
+  .fixed.bottom-8.right-8 { width: 3.5rem !important; height: 3.5rem !important; bottom: 1.25rem !important; right: 1.25rem !important; }
+  footer .grid { gap: 2rem !important; }
+  footer .mt-20 { margin-top: 3rem !important; }
+  .heritage-wayang { top: 38rem !important; left: -11rem !important; width: 34rem !important; opacity: .10 !important; }
+}
