@@ -128,37 +128,43 @@
             box-shadow: 0px 10px 30px rgba(10, 31, 68, 0.08);
         }
     </style>
-<link href="../assets/responsive.css" rel="stylesheet"/>
-<link href="../assets/motion.css" rel="stylesheet"/>
-<script defer src="../assets/motion.js"></script>
+<link href="assets/responsive.css" rel="stylesheet"/>
+<link href="assets/motion.css" rel="stylesheet"/>
+<script defer src="assets/motion.js"></script>
 </head>
-<body class="bg-background text-on-background min-h-screen">
+<body class="bg-background text-on-background min-h-screen pt-20">
 <!-- TopNavBar -->
-<nav class="docked full-width top-0 sticky z-50 bg-surface/90 backdrop-blur-md border-b border-outline-variant shadow-sm h-20">
+<nav class="site-nav docked full-width fixed inset-x-0 top-0 z-[9999] bg-surface/90 backdrop-blur-md border-b border-outline-variant shadow-sm h-20">
 <div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-full">
-<a class="flex items-center" href="../index.html" aria-label="Bimo Transport — Beranda">
-<img alt="Bimo Transport" class="w-28 h-auto md:w-32" src="../assets/bimo-logo.png"/>
+<a class="flex items-center" href="index.html" aria-label="Bimo Transport &mdash; Beranda">
+<img alt="Bimo Transport" class="w-28 h-auto md:w-32" src="assets/bimo-logo.png"/>
 </a>
 <div class="hidden md:flex items-center space-x-8">
-<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors" href="../bimo_transport_beranda_with_bottom_cta/code.html#sejarah-kami">Tentang Kami</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors" href="sejarah.html">Tentang Kami</a>
 <details class="relative group">
 <summary class="list-none cursor-pointer font-label-lg text-label-lg text-secondary font-bold border-b-2 border-secondary pb-1 flex items-center gap-1">Jenis Bus <span class="material-symbols-outlined text-base transition-transform group-open:rotate-180">expand_more</span></summary>
 <div class="absolute top-9 left-0 w-56 rounded-xl bg-white p-2 shadow-xl border border-outline-variant">
-<a class="block rounded-lg px-4 py-3 text-sm text-on-surface hover:bg-surface-container-low hover:text-secondary" href="#medium-long">Medium Long</a>
-<a class="block rounded-lg px-4 py-3 text-sm text-on-surface hover:bg-surface-container-low hover:text-secondary" href="#single-glass">Single Glass</a>
-<a class="block rounded-lg px-4 py-3 text-sm text-on-surface hover:bg-surface-container-low hover:text-secondary" href="#double-glass">Double Glass</a>
-<a class="block rounded-lg px-4 py-3 text-sm text-on-surface hover:bg-surface-container-low hover:text-secondary" href="#jetbus-5">Jetbus 5</a>
+<a class="block rounded-lg px-4 py-3 text-sm text-on-surface hover:bg-surface-container-low hover:text-secondary" href="medium-long.html">Medium Long</a>
+<a class="block rounded-lg px-4 py-3 text-sm text-on-surface hover:bg-surface-container-low hover:text-secondary" href="single-glass.html">Single Glass</a>
+<a class="block rounded-lg px-4 py-3 text-sm text-on-surface hover:bg-surface-container-low hover:text-secondary" href="double-glass.html">Double Glass</a>
+<a class="block rounded-lg px-4 py-3 text-sm text-on-surface hover:bg-surface-container-low hover:text-secondary" href="jetbus-5.html">Jetbus 5</a>
 </div>
 </details>
-<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors" href="../armada_daftar_harga/code.html">Price List</a>
-<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors" href="../testimoni_mitra_kami/code.html">Our Partners</a>
-<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors" href="../testimoni_mitra_kami/code.html">Testimoni</a>
-<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors" href="../kontak_kami/code.html">Contact Us</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors" href="armada.html">Price List</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors" href="mitra-testimoni.html">Our Partners</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors" href="mitra-testimoni.html#testimonials">Testimoni</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors" href="kontak.html">Contact Us</a>
 </div>
-<a href="../kontak_kami/code.html" class="bg-secondary text-on-secondary px-6 py-2.5 rounded-lg font-label-lg text-label-lg hover:shadow-lg hover:bg-on-secondary-fixed-variant transition-all active:scale-95 border-b-2 border-gold-accent">
+<a href="kontak.html" class="bg-secondary text-on-secondary px-6 py-2.5 rounded-lg font-label-lg text-label-lg hover:shadow-lg hover:bg-on-secondary-fixed-variant transition-all active:scale-95 border-b-2 border-gold-accent">
                 Pesan Sekarang
             </a>
 </div>
+</nav>
+<nav class="mobile-bottom-nav md:hidden" aria-label="Navigasi mobile">
+<a class="mobile-bottom-nav__item" href="index.html"><span class="material-symbols-outlined">home</span><span>Beranda</span></a>
+<a class="mobile-bottom-nav__item is-active" href="armada.html"><span class="material-symbols-outlined">directions_bus</span><span>Armada</span></a>
+<a class="mobile-bottom-nav__item" href="mitra-testimoni.html"><span class="material-symbols-outlined">groups</span><span>Mitra</span></a>
+<a class="mobile-bottom-nav__item" href="kontak.html"><span class="material-symbols-outlined">support_agent</span><span>Kontak</span></a>
 </nav>
 <!-- Main Content -->
 <main class="max-w-container-max mx-auto px-gutter py-section-padding space-y-20 relative overflow-hidden">
@@ -166,47 +172,23 @@
 <section class="relative" id="medium-long">
 <div class="flex flex-col md:flex-row gap-12 items-center">
 <div class="w-full md:w-1/2 rounded-2xl overflow-hidden premium-shadow relative group">
-<img class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A high-end luxury medium coach bus with 39 seats parked in a scenic roadside location in Indonesia. The bus is white with professional royal blue and silver livery, featuring modern aerodynamic lines. The lighting is bright afternoon sun, highlighting the polished finish and sophisticated design of the Bimo Transport fleet." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcQFrvUnTxQ8oGiosfzA3J3SgFkNzfRBpx5MIoIT2p5zeTi8oaV8BzJUSUzHNzfiL02VfCaoRaYixwgLM77EneVR27sQeK2Ul45Ui4gfbaK64O62qdXSLlVVxA4msclqJ5HJflmyBmrP0eLTxzECeOqwiPN1dfdnhIpwVoDT6F5hSivKlrAYpGAFjJg56lBw0t5ju6MR2bkH4eiEskHyfCAfBUI-n97T0l07Rf1HInKhX8M_t6Az6P"/>
+<img class="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A high-end luxury medium coach bus with 39 seats parked in a scenic roadside location in Indonesia. The bus is white with professional royal blue and silver livery, featuring modern aerodynamic lines. The lighting is bright afternoon sun, highlighting the polished finish and sophisticated design of the Bimo Transport fleet." src="assets/bus-medium-long.png"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
 </div>
 <div class="w-full md:w-1/2 space-y-6">
 <header>
 <h2 class="font-headline-lg text-headline-lg text-primary mb-2">Medium Long</h2>
-<p class="font-body-lg text-body-lg text-secondary font-semibold">Kapasitas 39 Seats</p>
+<p class="font-body-lg text-body-lg text-secondary font-semibold">Kapasitas 39 seats untuk grup sedang</p>
 </header>
 <div class="grid grid-cols-2 gap-y-4 gap-x-8">
-<div class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-all">
-<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">emergency_home</span>
-<span class="font-label-lg text-label-lg text-on-surface">Emergency Exit Door</span>
-</div>
-<div class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-all">
-<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">fire_extinguisher</span>
-<span class="font-label-lg text-label-lg text-on-surface">Fire Extinguisher</span>
-</div>
-<div class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-all">
-<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">location_on</span>
-<span class="font-label-lg text-label-lg text-on-surface">GPS Navigation</span>
-</div>
-<div class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-all">
-<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">mic</span>
-<span class="font-label-lg text-label-lg text-on-surface">Karaoke Sound System</span>
-</div>
-<div class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-all">
-<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">luggage</span>
-<span class="font-label-lg text-label-lg text-on-surface">Large Capacity Luggage</span>
-</div>
-<div class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-all">
-<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">usb</span>
-<span class="font-label-lg text-label-lg text-on-surface">USB Port &amp; Power Outlet</span>
-</div>
-<div class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-all">
-<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">chair</span>
-<span class="font-label-lg text-label-lg text-on-surface">Reclining Fabric Seats</span>
-</div>
-<div class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-all">
-<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">tv</span>
-<span class="font-label-lg text-label-lg text-on-surface">LED TV With DVD Player</span>
-</div>
+<div class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-all"><span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">chair_alt</span><span class="font-label-lg text-label-lg text-on-surface">Reclining seat ergonomis</span></div>
+<div class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-all"><span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">luggage</span><span class="font-label-lg text-label-lg text-on-surface">Bagasi sedang</span></div>
+<div class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-all"><span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">wifi</span><span class="font-label-lg text-label-lg text-on-surface">Wi-Fi onboard</span></div>
+<div class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-all"><span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">usb</span><span class="font-label-lg text-label-lg text-on-surface">USB &amp; charging port</span></div>
+<div class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-all"><span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">air</span><span class="font-label-lg text-label-lg text-on-surface">AC dingin merata</span></div>
+<div class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-all"><span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">video_library</span><span class="font-label-lg text-label-lg text-on-surface">TV &amp; audio hiburan</span></div>
+<div class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-all"><span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">emergency_home</span><span class="font-label-lg text-label-lg text-on-surface">Emergency exit</span></div>
+<div class="flex items-center gap-3 p-3 rounded-lg hover:bg-surface-container-low transition-all"><span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">pin_drop</span><span class="font-label-lg text-label-lg text-on-surface">GPS tracking</span></div>
 </div>
 </div>
 </div>
@@ -216,23 +198,26 @@
 <article id="single-glass" class="scroll-mt-28 bg-surface-container-lowest rounded-2xl border border-outline-variant p-7 premium-shadow">
 <div class="flex items-center justify-between mb-5"><span class="material-symbols-outlined text-secondary text-4xl">airport_shuttle</span><span class="text-xs font-semibold bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full">31 seats</span></div>
 <h3 class="font-headline-md text-headline-md text-primary">Single Glass</h3>
-<p class="mt-3 text-on-surface-variant font-body-sm leading-relaxed">Pilihan praktis untuk rombongan kecil, perjalanan dinas, dan city tour dengan kabin nyaman.</p>
-<ul class="mt-5 space-y-2 text-sm text-on-surface-variant"><li>• Reclining seat</li><li>• Audio karaoke &amp; TV</li><li>• Bagasi kabin</li></ul>
-<a href="../kontak_kami/code.html" class="mt-6 inline-flex text-secondary font-semibold text-sm">Tanyakan ketersediaan <span class="material-symbols-outlined text-base ml-1">arrow_forward</span></a>
+<p class="mt-3 text-on-surface-variant font-body-sm leading-relaxed">Armada paling gesit untuk grup kecil yang butuh mobilitas tinggi, manuver mudah, dan biaya operasional yang lebih hemat.</p>
+<ul class="mt-5 space-y-2 text-sm text-on-surface-variant"><li>&bull; 31 kursi reclining</li><li>&bull; Bagasi kabin atas</li><li>&bull; AC standard &amp; audio ringan</li><li>&bull; Cocok untuk city tour, sekolah, dan outing</li></ul>
+<a href="single-glass.html" class="mt-6 inline-flex text-secondary font-semibold text-sm">Lihat detail <span class="material-symbols-outlined text-base ml-1">arrow_forward</span></a>
+<a href="kontak.html" class="mt-6 inline-flex text-secondary font-semibold text-sm">Tanyakan ketersediaan <span class="material-symbols-outlined text-base ml-1">arrow_forward</span></a>
 </article>
 <article id="double-glass" class="scroll-mt-28 bg-primary-container text-white rounded-2xl p-7 premium-shadow">
-<div class="flex items-center justify-between mb-5"><span class="material-symbols-outlined text-gold-accent text-4xl">directions_bus</span><span class="text-xs font-semibold bg-white/10 text-white px-3 py-1 rounded-full">50 seats</span></div>
+<div class="flex items-center justify-between mb-5"><span class="material-symbols-outlined text-gold-accent text-4xl">directions_bus</span><span class="text-xs font-semibold bg-white/10 text-white px-3 py-1 rounded-full">45 seats</span></div>
 <h3 class="font-headline-md text-headline-md">Double Glass</h3>
-<p class="mt-3 text-white/75 font-body-sm leading-relaxed">Armada favorit untuk wisata keluarga dan perjalanan antarkota dengan kabin lega.</p>
-<ul class="mt-5 space-y-2 text-sm text-white/80"><li>• Panorama double glass</li><li>• USB charging port</li><li>• Bagasi besar</li></ul>
-<a href="../kontak_kami/code.html" class="mt-6 inline-flex text-gold-accent font-semibold text-sm">Tanyakan ketersediaan <span class="material-symbols-outlined text-base ml-1">arrow_forward</span></a>
+<p class="mt-3 text-white/75 font-body-sm leading-relaxed">Pilihan untuk perjalanan keluarga, ziarah, dan antarkota yang butuh kabin lebih tenang dan tampilan lebih kokoh.</p>
+<ul class="mt-5 space-y-2 text-sm text-white/80"><li>&bull; 45 kursi double glass</li><li>&bull; Jendela ganda meredam panas</li><li>&bull; Kursi lebih lebar</li><li>&bull; Bagasi besar dan stabil</li></ul>
+<a href="double-glass.html" class="mt-6 inline-flex text-gold-accent font-semibold text-sm">Lihat detail <span class="material-symbols-outlined text-base ml-1">arrow_forward</span></a>
+<a href="kontak.html" class="mt-6 inline-flex text-gold-accent font-semibold text-sm">Tanyakan ketersediaan <span class="material-symbols-outlined text-base ml-1">arrow_forward</span></a>
 </article>
 <article id="jetbus-5" class="scroll-mt-28 bg-surface-container-lowest rounded-2xl border border-outline-variant p-7 premium-shadow">
 <div class="flex items-center justify-between mb-5"><span class="material-symbols-outlined text-secondary text-4xl">workspace_premium</span><span class="text-xs font-semibold bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full">50 seats</span></div>
 <h3 class="font-headline-md text-headline-md text-primary">Jetbus 5</h3>
-<p class="mt-3 text-on-surface-variant font-body-sm leading-relaxed">Kelas premium untuk perjalanan istimewa dengan desain modern dan fitur kenyamanan lengkap.</p>
-<ul class="mt-5 space-y-2 text-sm text-on-surface-variant"><li>• Cabin ambience premium</li><li>• Entertainment system</li><li>• Safety equipment lengkap</li></ul>
-<a href="../kontak_kami/code.html" class="mt-6 inline-flex text-secondary font-semibold text-sm">Tanyakan ketersediaan <span class="material-symbols-outlined text-base ml-1">arrow_forward</span></a>
+<p class="mt-3 text-on-surface-variant font-body-sm leading-relaxed">Varian paling premium untuk rombongan besar, perjalanan jauh, dan tamu perusahaan yang mengutamakan kenyamanan maksimal.</p>
+<ul class="mt-5 space-y-2 text-sm text-on-surface-variant"><li>&bull; 50 kursi premium</li><li>&bull; Seat leg rest</li><li>&bull; Ambient lighting &amp; kabin modern</li><li>&bull; Audio visual entertainment</li><li>&bull; Safety kit lengkap</li></ul>
+<a href="jetbus-5.html" class="mt-6 inline-flex text-secondary font-semibold text-sm">Lihat detail <span class="material-symbols-outlined text-base ml-1">arrow_forward</span></a>
+<a href="kontak.html" class="mt-6 inline-flex text-secondary font-semibold text-sm">Tanyakan ketersediaan <span class="material-symbols-outlined text-base ml-1">arrow_forward</span></a>
 </article>
 </section>
 <!-- Section 2: Price List -->
@@ -363,11 +348,11 @@
 </main>
 <!-- Footer -->
 <footer class="relative overflow-hidden bg-primary-container text-on-primary-container py-section-padding full-width border-t border-white/10">
-<img aria-hidden="true" alt="" class="absolute -bottom-12 left-1/2 w-[min(900px,88vw)] -translate-x-1/2 pointer-events-none" src="../assets/bimo-logo.png" style="filter: grayscale(1) brightness(0) invert(1); opacity: .07;"/>
+<img aria-hidden="true" alt="" class="absolute -bottom-12 left-1/2 w-[min(900px,88vw)] -translate-x-1/2 pointer-events-none" src="assets/bimo-logo.png" style="filter: grayscale(1) brightness(0) invert(1); opacity: .07;"/>
 <div class="relative z-10 max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-12">
 <div class="space-y-6">
 <div class="flex items-center gap-3">
-<img alt="Bimo Transport" class="w-32 h-auto" src="../assets/bimo-logo.png"/>
+<img alt="Bimo Transport" class="w-32 h-auto" src="assets/bimo-logo.png"/>
 </div>
 <p class="font-body-sm text-body-sm text-on-primary-container/80 leading-relaxed">
                     Penyedia layanan transportasi premium di Yogyakarta dengan armada modern dan crew profesional. Kami mengutamakan keamanan, kenyamanan, dan ketepatan waktu perjalanan Anda.
@@ -384,10 +369,10 @@
 <div class="space-y-6">
 <h4 class="font-label-lg text-label-lg text-on-primary uppercase tracking-widest">Tautan Cepat</h4>
 <nav class="flex flex-col gap-3">
-<a class="font-body-sm text-body-sm text-on-primary-container/80 hover:text-on-primary transition-all" href="#">Tentang Kami</a>
-<a class="font-body-sm text-body-sm text-on-primary-container/80 hover:text-on-primary transition-all" href="#medium-long">Jenis Bus &amp; Armada</a>
-<a class="font-body-sm text-body-sm text-on-primary-container/80 hover:text-on-primary transition-all" href="#">Price List 2026</a>
-<a class="font-body-sm text-body-sm text-on-primary-container/80 hover:text-on-primary transition-all" href="#">Testimoni Pelanggan</a>
+<a class="font-body-sm text-body-sm text-on-primary-container/80 hover:text-on-primary transition-all" href="sejarah.html">Tentang Kami</a>
+<a class="font-body-sm text-body-sm text-on-primary-container/80 hover:text-on-primary transition-all" href="medium-long.html">Jenis Bus &amp; Armada</a>
+<a class="font-body-sm text-body-sm text-on-primary-container/80 hover:text-on-primary transition-all" href="armada.html">Price List 2026</a>
+<a class="font-body-sm text-body-sm text-on-primary-container/80 hover:text-on-primary transition-all" href="mitra-testimoni.html#testimonials">Testimoni Pelanggan</a>
 <a class="font-body-sm text-body-sm text-on-primary-container/80 hover:text-on-primary transition-all" href="#">Syarat &amp; Ketentuan</a>
 </nav>
 </div>
@@ -411,7 +396,7 @@
 </div>
 <div class="max-w-container-max mx-auto px-gutter mt-16 pt-8 border-t border-on-primary-container/10">
 <p class="font-body-sm text-body-sm text-center text-on-primary-container/60">
-                Copyright © 2026 Bimo Transport | Professional Travel Experience
+                Copyright &copy; 2026 Bimo Transport | Professional Travel Experience
             </p>
 </div>
 </footer>
@@ -444,3 +429,7 @@
         });
     </script>
 </body></html>
+
+
+
+

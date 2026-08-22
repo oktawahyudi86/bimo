@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us | Bimo Transport</title>
+<meta name="description" content="Hubungi Bimo Transport untuk konsultasi rute wisata, pemesanan armada, dan kebutuhan sewa bus pariwisata."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "surface-container": "#eceef0",
+        "primary-container": "#0a1f44",
+        "on-secondary": "#ffffff",
+        "outline-variant": "#c5c6cf",
+        "surface-container-high": "#e6e8ea",
+        "primary": "#00081e",
+        "surface-container-low": "#f2f4f6",
+        "surface-container-lowest": "#ffffff",
+        "secondary": "#3755c3",
+        "on-surface-variant": "#44464e",
+        "on-surface": "#191c1e",
+        "surface-bright": "#f7f9fb",
+        "background": "#f7f9fb",
+        "surface": "#f7f9fb",
+        "on-primary-container": "#7687b2",
+        "on-background": "#191c1e",
+        "secondary-container": "#708cfd",
+        "on-secondary-container": "#00217a",
+        "on-primary": "#ffffff",
+        "on-secondary-fixed-variant": "#173bab",
+        "outline": "#75777f",
+        "error": "#ba1a1a",
+        "gold-accent": "#D4AF37"
+      },
+      spacing: {
+        "gutter": "24px",
+        "container-max": "1200px",
+        "section-padding": "80px"
+      },
+      fontFamily: {
+        "label-lg": ["Inter"],
+        "headline-lg": ["Montserrat"],
+        "headline-sm": ["Montserrat"],
+        "headline-md": ["Montserrat"],
+        "body-lg": ["Inter"],
+        "body-sm": ["Inter"],
+        "display-lg": ["Montserrat"],
+        "body-md": ["Inter"]
+      },
+      fontSize: {
+        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+        "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+        "display-lg": ["48px", {"lineHeight": "56px", "fontWeight": "700"}],
+        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="assets/responsive.css" rel="stylesheet"/>
+<link href="assets/motion.css" rel="stylesheet"/>
+<script defer src="assets/motion.js"></script>
+<style>
+body { font-family: Inter, sans-serif; }
+.material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+.premium-shadow { box-shadow: 0 4px 20px rgba(0, 0, 0, .05); }
+.premium-shadow-hover:hover { box-shadow: 0 12px 32px rgba(10, 31, 68, .10); }
+.heritage-bg {
+  position: absolute;
+  width: min(44rem, 58vw);
+  left: -14rem;
+  bottom: -10rem;
+  opacity: .075;
+  pointer-events: none;
+  user-select: none;
+}
+.contact-field {
+  width: 100%;
+  border-radius: .75rem;
+  border: 1px solid #c5c6cf;
+  background: #ffffff;
+  padding: .875rem 1rem;
+  color: #191c1e;
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.contact-field:focus {
+  border-color: #3755c3;
+  box-shadow: 0 0 0 4px rgba(55, 85, 195, .12);
+}
+</style>
+</head>
+<body class="bg-background text-on-background min-h-screen pt-20">
+<nav class="site-nav docked full-width fixed inset-x-0 top-0 z-[9999] bg-surface/90 backdrop-blur-md border-b border-outline-variant shadow-sm h-20">
+<div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-full">
+<a class="flex items-center" href="index.html" aria-label="Bimo Transport Beranda">
+<img alt="Bimo Transport" class="w-28 h-auto md:w-32" src="assets/bimo-logo.png"/>
+</a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors" href="sejarah.html">Tentang Kami</a>
+<details class="relative group">
+<summary class="list-none cursor-pointer font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors flex items-center gap-1">Jenis Bus <span class="material-symbols-outlined text-base transition-transform group-open:rotate-180">expand_more</span></summary>
+<div class="absolute top-9 left-0 w-56 rounded-xl bg-white p-2 shadow-xl border border-outline-variant">
+<a class="block rounded-lg px-4 py-3 text-sm text-on-surface hover:bg-surface-container-low hover:text-secondary" href="medium-long.html">Medium Long</a>
+<a class="block rounded-lg px-4 py-3 text-sm text-on-surface hover:bg-surface-container-low hover:text-secondary" href="single-glass.html">Single Glass</a>
+<a class="block rounded-lg px-4 py-3 text-sm text-on-surface hover:bg-surface-container-low hover:text-secondary" href="double-glass.html">Double Glass</a>
+<a class="block rounded-lg px-4 py-3 text-sm text-on-surface hover:bg-surface-container-low hover:text-secondary" href="jetbus-5.html">Jetbus 5</a>
+</div>
+</details>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors" href="armada.html">Price List</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors" href="mitra-testimoni.html">Our Partners</a>
+<a class="font-label-lg text-label-lg text-on-surface-variant hover:text-secondary transition-colors" href="mitra-testimoni.html#testimonials">Testimoni</a>
+<a class="font-label-lg text-label-lg text-secondary font-bold border-b-2 border-secondary pb-1" href="kontak.html">Contact Us</a>
+</div>
+<a href="#contact-form" class="bg-secondary text-on-secondary px-6 py-2.5 rounded-lg font-label-lg text-label-lg hover:shadow-lg hover:bg-on-secondary-fixed-variant transition-all active:scale-95 border-b-2 border-gold-accent">Pesan Sekarang</a>
+</div>
+</nav>
+<nav class="mobile-bottom-nav md:hidden" aria-label="Navigasi mobile">
+<a class="mobile-bottom-nav__item" href="index.html"><span class="material-symbols-outlined">home</span><span>Beranda</span></a>
+<a class="mobile-bottom-nav__item" href="rute.html"><span class="material-symbols-outlined">travel_explore</span><span>Rute</span></a>
+<a class="mobile-bottom-nav__item" href="armada.html"><span class="material-symbols-outlined">directions_bus</span><span>Armada</span></a>
+<a class="mobile-bottom-nav__item is-active" href="kontak.html"><span class="material-symbols-outlined">support_agent</span><span>Kontak</span></a>
+</nav>
+
+<main>
+<section class="relative overflow-hidden bg-surface">
+<img aria-hidden="true" alt="" class="heritage-bg" src="assets/wayang.png"/>
+<div class="max-w-container-max mx-auto px-gutter py-section-padding">
+<div class="grid grid-cols-1 lg:grid-cols-[.95fr_1.05fr] gap-14 items-start">
+<div>
+<p class="font-label-lg text-label-lg uppercase tracking-widest text-secondary mb-4">Contact Us</p>
+<h1 class="font-display-lg text-display-lg text-primary">Konsultasikan perjalanan sebelum memilih armada.</h1>
+<p class="mt-6 font-body-lg text-body-lg text-on-surface-variant max-w-xl">Ceritakan tujuan, tanggal, dan jumlah peserta. Tim Bimo membantu membaca kebutuhan rute, kapasitas, dan estimasi layanan dengan lebih rapi.</p>
+<div class="mt-10 divide-y divide-outline-variant border-y border-outline-variant">
+<a class="group flex items-center gap-5 py-6" href="https://wa.me/628112652466">
+<span class="material-symbols-outlined text-secondary text-3xl">chat</span>
+<span class="flex-1">
+<span class="block font-headline-sm text-headline-sm text-primary">WhatsApp Service</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant mt-1">08112652466, 082256565500, 085228919193</span>
+</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary group-hover:translate-x-1 transition-all">arrow_forward</span>
+</a>
+<a class="group flex items-center gap-5 py-6" href="tel:+622744435100">
+<span class="material-symbols-outlined text-secondary text-3xl">phone_in_talk</span>
+<span class="flex-1">
+<span class="block font-headline-sm text-headline-sm text-primary">Hotline Kantor</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant mt-1">(0274) 4435100</span>
+</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary group-hover:translate-x-1 transition-all">arrow_forward</span>
+</a>
+<a class="group flex items-center gap-5 py-6" href="mailto:marketing.bimotransportind@gmail.com">
+<span class="material-symbols-outlined text-secondary text-3xl">mail</span>
+<span class="flex-1">
+<span class="block font-headline-sm text-headline-sm text-primary">Email Reservasi</span>
+<span class="block font-body-sm text-body-sm text-on-surface-variant mt-1">marketing.bimotransportind@gmail.com</span>
+</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary group-hover:translate-x-1 transition-all">arrow_forward</span>
+</a>
+</div>
+</div>
+
+<div class="bg-white rounded-2xl border border-outline-variant premium-shadow overflow-hidden">
+<div class="bg-primary-container text-white p-7 md:p-8">
+<p class="font-label-lg text-label-lg uppercase tracking-widest text-gold-accent mb-3">Pesan Cepat</p>
+<h2 class="font-headline-md text-headline-md">Kirim detail perjalanan Anda</h2>
+<p class="font-body-sm text-body-sm text-white/75 mt-3">Form ini untuk prototype. Untuk respon tercepat, gunakan WhatsApp admin.</p>
+</div>
+<form id="contact-form" class="p-7 md:p-8 space-y-5">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<label class="block">
+<span class="sr-only">Nama Lengkap</span>
+<input class="contact-field" placeholder="Nama Lengkap" type="text"/>
+</label>
+<label class="block">
+<span class="sr-only">Nomor WhatsApp</span>
+<input class="contact-field" placeholder="Nomor WhatsApp" type="tel"/>
+</label>
+</div>
+<label class="block">
+<span class="sr-only">Tujuan Perjalanan</span>
+<input class="contact-field" placeholder="Tujuan perjalanan, contoh: Yogyakarta - Bali" type="text"/>
+</label>
+<label class="block">
+<span class="sr-only">Pesan</span>
+<textarea class="contact-field min-h-36 resize-y" placeholder="Jumlah peserta, tanggal keberangkatan, titik jemput, dan kebutuhan khusus..." rows="5"></textarea>
+</label>
+<button class="w-full bg-secondary text-white py-4 rounded-lg font-label-lg text-label-lg hover:bg-on-secondary-fixed-variant transition-all active:scale-95 border-b-2 border-gold-accent" type="submit">Kirim Konsultasi</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-section-padding bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="grid grid-cols-1 lg:grid-cols-[.9fr_1.1fr] gap-12 items-start">
+<div>
+<p class="font-label-lg text-label-lg uppercase tracking-widest text-secondary mb-4">Kantor Kami</p>
+<h2 class="font-headline-lg text-headline-lg text-primary">Berbasis di Berbah, Sleman, Yogyakarta.</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4">Lokasi operasional kami berada di area timur Yogyakarta, memudahkan penjemputan untuk rute dalam kota, bandara, wisata candi, dan perjalanan luar kota.</p>
+<div class="mt-8 flex flex-col sm:flex-row gap-4">
+<a class="inline-flex items-center justify-center bg-primary-container text-white px-7 py-3 rounded-lg font-label-lg text-label-lg hover:bg-primary transition-colors" href="https://www.google.com/maps/search/?api=1&query=Jl.%20Sampaan%20Berbah%20Sleman%20Yogyakarta">Buka Google Maps</a>
+<a class="inline-flex items-center justify-center border border-outline-variant text-primary px-7 py-3 rounded-lg font-label-lg text-label-lg hover:bg-white transition-colors" href="rute.html">Lihat Rute</a>
+</div>
+</div>
+<div class="bg-white rounded-2xl border border-outline-variant premium-shadow p-6 md:p-8">
+<div class="aspect-[16/9] rounded-xl bg-surface-container-low border border-outline-variant overflow-hidden flex items-center justify-center">
+<div class="text-center px-8">
+<span class="material-symbols-outlined text-secondary text-5xl">location_on</span>
+<p class="font-headline-sm text-headline-sm text-primary mt-4">Jl. Sampaan - Berbah</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Kadisono, Tegaltirto, Kec. Berbah, Kab. Sleman, Daerah Istimewa Yogyakarta 55573</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="py-section-padding bg-surface">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="max-w-3xl">
+<p class="font-label-lg text-label-lg uppercase tracking-widest text-secondary mb-4">FAQ</p>
+<h2 class="font-headline-lg text-headline-lg text-primary">Pertanyaan yang sering muncul sebelum pemesanan.</h2>
+</div>
+<div class="mt-10 divide-y divide-outline-variant border-y border-outline-variant">
+<details class="group py-6">
+<summary class="list-none cursor-pointer flex items-center justify-between gap-6">
+<span class="font-headline-sm text-headline-sm text-primary">Bagaimana cara memesan bus?</span>
+<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 max-w-3xl">Anda dapat menghubungi WhatsApp, hotline, atau mengirim detail perjalanan melalui form konsultasi.</p>
+</details>
+<details class="group py-6">
+<summary class="list-none cursor-pointer flex items-center justify-between gap-6">
+<span class="font-headline-sm text-headline-sm text-primary">Apakah harga sudah termasuk BBM dan driver?</span>
+<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 max-w-3xl">Paket dapat disesuaikan dengan rute dan kebutuhan. Tim admin akan menjelaskan komponen harga saat konsultasi.</p>
+</details>
+<details class="group py-6">
+<summary class="list-none cursor-pointer flex items-center justify-between gap-6">
+<span class="font-headline-sm text-headline-sm text-primary">Berapa kapasitas bus yang tersedia?</span>
+<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 max-w-3xl">Tersedia pilihan Medium Long, Single Glass, Double Glass, dan Jetbus 5 untuk kebutuhan rombongan berbeda.</p>
+</details>
+<details class="group py-6">
+<summary class="list-none cursor-pointer flex items-center justify-between gap-6">
+<span class="font-headline-sm text-headline-sm text-primary">Apakah bisa melayani rute luar Jawa?</span>
+<span class="material-symbols-outlined text-secondary transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4 max-w-3xl">Bisa dikonsultasikan untuk rute Jawa, Bali, Lombok, dan kebutuhan perjalanan khusus lainnya.</p>
+</details>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="relative overflow-hidden bg-primary-container text-on-primary-container py-section-padding full-width border-t border-white/10">
+<img aria-hidden="true" alt="" class="absolute -bottom-12 left-1/2 w-[min(900px,88vw)] -translate-x-1/2 pointer-events-none" src="assets/bimo-logo.png" style="filter: grayscale(1) brightness(0) invert(1); opacity: .07;"/>
+<div class="relative z-10 max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="space-y-6">
+<img alt="Bimo Transport" class="w-32 h-auto" src="assets/bimo-logo.png"/>
+<p class="font-body-sm text-body-sm text-on-primary-container/80 leading-relaxed">Penyedia layanan transportasi premium di Yogyakarta dengan armada modern dan crew profesional.</p>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-lg text-label-lg text-on-primary uppercase tracking-widest">Tautan Cepat</h4>
+<nav class="flex flex-col gap-3">
+<a class="font-body-sm text-body-sm text-on-primary-container/80 hover:text-on-primary transition-all" href="sejarah.html">Tentang Kami</a>
+<a class="font-body-sm text-body-sm text-on-primary-container/80 hover:text-on-primary transition-all" href="medium-long.html">Jenis Bus &amp; Armada</a>
+<a class="font-body-sm text-body-sm text-on-primary-container/80 hover:text-on-primary transition-all" href="rute.html">Rute Perjalanan</a>
+<a class="font-body-sm text-body-sm text-on-primary-container/80 hover:text-on-primary transition-all" href="armada.html">Price List 2026</a>
+<a class="font-body-sm text-body-sm text-on-primary-container/80 hover:text-on-primary transition-all" href="mitra-testimoni.html#testimonials">Testimoni Pelanggan</a>
+</nav>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-lg text-label-lg text-on-primary uppercase tracking-widest">Hubungi Kami</h4>
+<div class="space-y-4">
+<div class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary-container">phone</span><span class="font-body-sm text-body-sm">+62 811-2652-466</span></div>
+<div class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary-container">location_on</span><span class="font-body-sm text-body-sm">Jl. Sampaan - Berbah, Sleman, Yogyakarta</span></div>
+<div class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary-container">mail</span><span class="font-body-sm text-body-sm">marketing.bimotransportind@gmail.com</span></div>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-gutter mt-16 pt-8 border-t border-on-primary-container/10">
+<p class="font-body-sm text-body-sm text-center text-on-primary-container/60">Copyright &copy; 2026 Bimo Transport | Professional Travel Experience</p>
+</div>
+</footer>
+<a class="fixed bottom-8 right-8 w-16 h-16 bg-secondary text-white rounded-full flex items-center justify-center shadow-xl hover:bg-primary-container hover:scale-110 transition-transform active:scale-95 z-[100]" href="https://wa.me/628112652466">
+<svg fill="currentColor" height="32" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.512-2.96-2.626-.087-.115-.708-.941-.708-1.797 0-.856.448-1.277.607-1.45.16-.174.346-.217.462-.217h.332c.101 0 .231-.014.361.32s.448 1.085.491 1.171c.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.304c-.087.101-.177.211-.077.383.1.173.444.734.953 1.188.656.584 1.21.765 1.382.852.173.087.275.072.376-.045.101-.115.433-.505.548-.678.115-.173.231-.144.39-.087s1.011.477 1.184.564c.173.087.289.13.332.202.045.072.045.419-.1.824z"></path></svg>
+</a>
+<script>
+window.addEventListener('scroll', () => {
+  const nav = document.querySelector('nav');
+  if (window.scrollY > 50) nav.classList.add('premium-shadow');
+  else nav.classList.remove('premium-shadow');
+});
+document.querySelector('#contact-form')?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const button = event.currentTarget.querySelector('button');
+  const original = button.textContent;
+  button.textContent = 'Pesan Terkirim';
+  window.setTimeout(() => {
+    button.textContent = original;
+    event.currentTarget.reset();
+  }, 1600);
+});
+</script>
+</body>
+</html>
