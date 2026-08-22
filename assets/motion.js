@@ -1,6 +1,54 @@
 document.addEventListener('DOMContentLoaded', () => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  const createPageSkeleton = () => {
+    if (document.querySelector('.page-content-skeleton')) return;
+
+    const skeleton = document.createElement('div');
+    skeleton.className = 'page-content-skeleton';
+    skeleton.setAttribute('aria-hidden', 'true');
+    skeleton.innerHTML = `
+      <div class="page-content-skeleton__inner">
+        <div class="page-content-skeleton__toolbar">
+          <span class="page-content-skeleton__pill page-content-skeleton__pill--wide"></span>
+          <span class="page-content-skeleton__pill"></span>
+          <span class="page-content-skeleton__pill"></span>
+        </div>
+        <div class="page-content-skeleton__layout">
+          <aside class="page-content-skeleton__filters">
+            <span class="page-content-skeleton__block page-content-skeleton__block--hero"></span>
+            <span class="page-content-skeleton__filter"></span>
+            <span class="page-content-skeleton__filter"></span>
+            <span class="page-content-skeleton__filter"></span>
+            <span class="page-content-skeleton__filter"></span>
+          </aside>
+          <section class="page-content-skeleton__list">
+            ${Array.from({ length: 4 }).map(() => `
+              <article class="page-content-skeleton__card">
+                <div class="page-content-skeleton__media"></div>
+                <div class="page-content-skeleton__copy">
+                  <span class="page-content-skeleton__line page-content-skeleton__line--title"></span>
+                  <span class="page-content-skeleton__line"></span>
+                  <span class="page-content-skeleton__line page-content-skeleton__line--short"></span>
+                  <div class="page-content-skeleton__chips">
+                    <span></span><span></span><span></span>
+                  </div>
+                </div>
+                <div class="page-content-skeleton__action">
+                  <span></span>
+                  <span></span>
+                </div>
+              </article>
+            `).join('')}
+          </section>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(skeleton);
+  };
+
+  createPageSkeleton();
+
   const setNavState = () => {
     document.querySelectorAll('.site-nav').forEach((nav) => {
       nav.classList.toggle('nav-scrolled', window.scrollY > 20);
@@ -16,8 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   const currentFile = normalizeFile(window.location.pathname);
   const activeGroups = {
-    'index.html': ['index.html', ''],
-    'armada.html': ['armada.html', 'medium-long.html', 'single-glass.html', 'double-glass.html', 'jetbus-5.html'],
+    'index.html': ['index.html', '', 'sejarah.html'],
+    'armada.html': ['armada.html', 'medium-long.html', 'single-glass.html', 'double-glass.html', 'jetbus-5.html', 'rute.html'],
     'mitra-testimoni.html': ['mitra-testimoni.html'],
     'kontak.html': ['kontak.html']
   };
@@ -65,10 +113,11 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', (event) => {
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
       event.preventDefault();
+      createPageSkeleton();
       document.documentElement.classList.add('page-is-leaving');
       window.setTimeout(() => {
         window.location.href = link.href;
-      }, reduceMotion ? 0 : 220);
+      }, reduceMotion ? 0 : 260);
     });
   });
 });
