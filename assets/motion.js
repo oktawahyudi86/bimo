@@ -1,27 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  const loader = document.createElement('div');
-  loader.className = 'page-shell-loader';
-  loader.setAttribute('aria-hidden', 'true');
-  loader.innerHTML = `
-    <div class="page-shell-loader__panel">
-      <div class="page-shell-loader__brand">
-        <div class="page-shell-loader__mark"></div>
-        <div class="page-shell-loader__title"></div>
-      </div>
-      <div class="page-shell-loader__line"></div>
-      <div class="page-shell-loader__line"></div>
-      <div class="page-shell-loader__line"></div>
-      <div class="page-shell-loader__grid">
-        <div class="page-shell-loader__pill"></div>
-        <div class="page-shell-loader__pill"></div>
-        <div class="page-shell-loader__pill"></div>
-      </div>
-    </div>
-  `;
-  document.body.appendChild(loader);
-
   const setNavState = () => {
     document.querySelectorAll('.site-nav').forEach((nav) => {
       nav.classList.toggle('nav-scrolled', window.scrollY > 20);
@@ -30,16 +9,30 @@ document.addEventListener('DOMContentLoaded', () => {
   setNavState();
   window.addEventListener('scroll', setNavState, { passive: true });
 
-  const currentFile = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  const normalizeFile = (path) => {
+    const raw = (path.split('/').pop() || 'index.html').toLowerCase();
+    if (!raw || raw === 'index') return 'index.html';
+    return raw.endsWith('.html') ? raw : `${raw}.html`;
+  };
+  const currentFile = normalizeFile(window.location.pathname);
   const activeGroups = {
     'index.html': ['index.html', ''],
     'armada.html': ['armada.html', 'medium-long.html', 'single-glass.html', 'double-glass.html', 'jetbus-5.html'],
     'mitra-testimoni.html': ['mitra-testimoni.html'],
     'kontak.html': ['kontak.html']
   };
+  const mobileItems = [
+    ['index.html', 'home', 'Beranda'],
+    ['armada.html', 'directions_bus', 'Armada'],
+    ['mitra-testimoni.html', 'groups', 'Mitra'],
+    ['kontak.html', 'support_agent', 'Kontak']
+  ];
   document.querySelectorAll('.mobile-bottom-nav').forEach((nav) => {
+    nav.innerHTML = mobileItems.map(([href, icon, label]) => (
+      `<a class="mobile-bottom-nav__item" href="${href}"><span class="material-symbols-outlined">${icon}</span><span>${label}</span></a>`
+    )).join('');
     nav.querySelectorAll('.mobile-bottom-nav__item').forEach((item) => {
-      const itemFile = (new URL(item.href, window.location.href).pathname.split('/').pop() || 'index.html').toLowerCase();
+      const itemFile = normalizeFile(new URL(item.href, window.location.href).pathname);
       const shouldActivate = Object.entries(activeGroups).some(([targetFile, files]) => {
         return itemFile === targetFile && files.includes(currentFile);
       });
