@@ -205,6 +205,25 @@ td {
 .site-nav .bg-secondary {
   color: #ffffff !important;
 }
+.home-page .site-nav:not(.nav-scrolled) a,
+.home-page .site-nav:not(.nav-scrolled) summary,
+.home-page .site-nav:not(.nav-scrolled) summary .material-symbols-outlined {
+  color: rgba(255, 255, 255, .96) !important;
+  text-shadow: 0 1px 10px rgba(0, 8, 30, .42);
+}
+.home-page .site-nav:not(.nav-scrolled) a:hover,
+.home-page .site-nav:not(.nav-scrolled) summary:hover {
+  color: #ffffff !important;
+}
+/* The dropdown is a light surface even while the navbar overlays the hero. */
+.home-page .site-nav:not(.nav-scrolled) details > div a,
+.home-page .site-nav:not(.nav-scrolled) details > div a:hover {
+  color: var(--bimo-ink) !important;
+  text-shadow: none;
+}
+.home-page .site-nav:not(.nav-scrolled) details > div a:hover {
+  color: var(--bimo-blue) !important;
+}
 .site-nav details > div {
   border-radius: var(--bimo-radius) !important;
   box-shadow: 0 16px 36px rgba(7, 17, 38, .12) !important;
